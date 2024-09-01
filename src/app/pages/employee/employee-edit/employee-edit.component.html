@@ -1,0 +1,186 @@
+<main id="main" class="main">
+    <h1>Edit</h1>
+    <div class="container">
+
+    <form #form="ngForm" class="card border-0 p-3">
+        
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">First Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="first_name" placeholder="First Name" [(ngModel)]="empFirstName" class="form-control" type="text" value="empFirstName">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Last Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="last_name" placeholder="Last Name" [(ngModel)]="empLastName" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <label class="col-md-4 control-label">Image</label>
+            <app-uploadcontrolconcomponent selimg="{{empimageUrl}}" type="file" selectedFiles="empImage" (selectedimage)=selectedfile($event) class="FileUpload mb-1" uploadicon="uploadicon" recommendedsize="Recommended size 100 * 100" *ngIf="Isshowfileupload"></app-uploadcontrolconcomponent>                 
+
+            
+             
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Date Of Birth</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input name="dob" placeholder="Date of Birth"  [ngModel]="empDob" class="form-control" type="date">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Phone</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="phone" placeholder="(845)555-1212" [(ngModel)]="empPhone" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Gender</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="gender" placeholder="Gender" [(ngModel)]="empGender" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Qualification</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="qualification" placeholder="Qualification" [(ngModel)]="empQualification" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">City</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="city" placeholder="city" [(ngModel)]="empCity" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+             <!-- Text input-->
+
+             <div class="form-group">
+                <label class="col-md-4 control-label">State</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="State" placeholder="Stat" [(ngModel)]="empState" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">PinCode</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="pincode" placeholder="Pincode" [(ngModel)]="empPincode" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Address</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="address" placeholder="Address" [(ngModel)]="empAddress" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="email" placeholder="E-Mail Address" [(ngModel)]="empEmail" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="col-md-4 control-label">Company</label>
+                <select class="form-select" [(ngModel)]="cmpId" (change)="onCompanyChange($event)">
+                  <option value="-" selected>Select any company</option>
+                  <option *ngFor="let item of companylist" [value]="item.cmpId">{{item.cmpName}}</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="col-md-4 control-label">Department</label>
+                <select class="form-select" [(ngModel)]="dptId" (change)="onDepartmentChange($event)">
+                  <option value="-" selected>Select any department</option>
+                  <option *ngFor="let item of departmentlist" [value]="item.dptId">{{item.dptName}}</option>
+                </select>
+            </div>
+           
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Joining date</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="joiningdate" placeholder="Joining date" [(ngModel)]="empJoiningDate" class="form-control" type="date">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button (click)="onSubmit(form)" type="submit" class="btn btn-warning">Update <span
+                            class="glyphicon glyphicon-send"></span></button>
+                </div>
+            </div>
+
+        
+    </form>
+</div>
+</main>

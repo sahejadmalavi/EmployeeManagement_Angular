@@ -1,0 +1,50 @@
+<main id="main" class="main">
+    <h1>Edit</h1>
+    <div class="container">
+
+        <form #form="ngForm" class="card border-0 p-3">
+
+           
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Company Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            
+                            
+                            <input name="company_name" placeholder="Company Name" [(ngModel)]="cmpName" class="form-control" type="text" value="{{cmpName}}">
+                            <span class="small text-danger">{{nameMessage}}</span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Checkboxes -->
+                 <div class="form-group">
+                    <label class="col-md-4 control-label">Departments</label>
+                    <div class="col-md-4">
+                        <div *ngFor="let department of departmentlist; let i = index">
+                            <input 
+                                type="checkbox" 
+                                [value]="department.dptid" 
+                                (change)="onCheckboxChange($event,i)" 
+                                [checked]="isSelected(department)">
+                            {{department.dptName}}
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button (click)="onSubmit(form)" type="submit" class="btn btn-warning">Update <span
+                                class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+           
+        </form>
+    </div>
+</main>

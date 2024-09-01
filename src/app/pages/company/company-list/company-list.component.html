@@ -1,0 +1,30 @@
+<main id="main" class="main">
+    <h1>Company</h1>
+    <div class="slider-list">     
+    <div class="card border-0 p-3">
+      <div class="table-responsive">
+         <a routerLink="{{companyCreateUrl}}" class="">Create</a> 
+        
+        <table class="table mb-0">
+            <thead>
+              <tr>                    
+                <th>Company Name</th>                               
+                <th>Status</th> 
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of companylist">   
+                    <td class="text-theme">{{item.cmpName}}</td>
+                    <td class="text-theme">{{item.cmpIsActive}}</td>
+                    <td> <a type="button" routerLink="/{{companyEditUrl}}/{{item.cmpId}}"  class="btn btn-primary">Edit</a>
+                      <a type="button" (click)="deleteCompany(item.cmpId)" class="btn btn-danger">Delete</a> 
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>                            
+</div>
+
+</main>

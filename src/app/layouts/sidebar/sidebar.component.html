@@ -1,0 +1,17 @@
+<style>
+   .active,.active > i{
+      background-color: #005ca7;
+      color:white;
+   }
+</style>
+<aside id="sidebar" class="sidebar">   
+    <!-- <app-logocomponent logostyle="mb-3 logo-img-sidebar"></app-logocomponent> -->
+    <img src="https://5.imimg.com/data5/BA/LA/GLADMIN-25205018/employee-management-system.png" class="img-fluid {{logostyle}}">
+
+    <ul class="sidebar-nav" id="sidebar-nav">     
+       
+       <li class="nav-item" *ngFor="let item of menuItems">
+          <a class="nav-link" routerLinkActive="active"  routerLink="/{{item.href}}"><i class="bi {{item.icon}}"></i> {{item.label}}</a>              
+       </li>                         
+    </ul>
+</aside> 

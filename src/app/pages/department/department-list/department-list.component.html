@@ -1,0 +1,29 @@
+<main id="main" class="main">
+    <h1>Department</h1>
+    <div class="slider-list">     
+    <div class="card border-0 p-3">
+      <div class="table-responsive">
+         <a routerLink="{{departmentCreateUrl}}" class="">Create</a> 
+        <table class="table mb-0">
+            <thead>
+              <tr>                    
+                <th>Department Name</th>
+                <th>Status</th> 
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of departmentlist">   
+                    <td class="text-theme">{{item.dptName}}</td>                                         
+                    <td class="text-theme">{{item.dptIsActive}}</td>
+                    <td> <a type="button" routerLink="/{{departmentEditUrl}}/{{item.dptId}}"  class="btn btn-primary">Edit</a>
+                      <a type="button" (click)="deleteDepartment(item.dptId)" class="btn btn-danger">Delete</a> 
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>                            
+</div>
+
+</main>

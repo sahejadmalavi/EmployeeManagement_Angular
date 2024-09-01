@@ -1,0 +1,24 @@
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between"> 
+      <a routerLink="/dashboard" class="logo d-flex align-items-center"> 
+         <!-- <app-logocomponent logostyle="logo-img-header"></app-logocomponent> -->
+      </a> 
+      <i (click)="sidebarToggle()" class="bi bi-list-nested toggle-sidebar-btn d-none d-md-block"></i>
+   </div>  
+    <nav class="header-nav ms-auto">
+       <ul class="d-flex align-items-center mobile-menu">
+          <li class="nav-item d-block d-lg-none"> <a class="nav-link nav-icon search-bar-toggle " > <i (click)="sidebarToggle()" class="bi bi-list-nested toggle-sidebar-btn"></i> </a></li>
+          <li class="nav-item dropdown pe-3">
+             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+             <img  src="/assets/images/icon/profile.jpg" alt="Profile" class="rounded-circle"> 
+             <span class="d-none d-md-block dropdown-toggle ps-2">
+               <span>{{userName}}</span>
+             </span> </a>
+             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+             <!-- <app-headerdropdowncomponent></app-headerdropdowncomponent> -->
+            </ul>
+          </li>
+       </ul>
+    </nav>
+ </header>
+ 

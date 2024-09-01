@@ -1,0 +1,48 @@
+<main id="main" class="main">
+    <h1>Employee</h1>
+     
+    <div class="slider-list">     
+    <div class="card border-0 p-3">
+      <div class="table-responsive">
+        <a routerLink="{{employeeCreateUrl}}" class="">Create</a> 
+        <table class="table mb-0">
+            <thead>
+              <tr>                    
+                <th>Employee FirstName</th>
+                <th>Employee Lastname</th> 
+                <th>Image</th>
+                <th>DOB</th>
+                <th>Phone no.</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Status</th>                
+                <th>Department</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of employeelist">   
+                    <td class="text-theme">{{item.empFirstName}}</td>
+                    <td class="text-theme">{{item.empLastName}}</td>
+                    <td class="text-theme">
+                      <img src="https://localhost:7020/Images/Employee/{{item.empImage}}" >
+                      </td>
+                    <td class="text-theme">{{item.empDob}}</td>
+                    <td class="text-theme">{{item.empPhone}}</td>
+                    <td class="text-theme">{{item.empGender}}</td>
+                    <td class="text-theme">{{item.empQualification}}</td>
+                    <td class="text-theme">{{item.empCity}}</td>                                      
+                    <td class="text-theme">{{item.empEmail}}</td>
+                    <td class="text-theme">{{item.empIsActive}}</td>
+                    <td> <a type="button" routerLink="/{{employeeEditUrl}}/{{item.empId}}"  class="btn btn-primary">Edit</a> 
+                      <a type="button" (click)="deleteEmployee(item.empId)" class="btn btn-danger">Delete</a> 
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>                            
+</div>
+
+</main>
